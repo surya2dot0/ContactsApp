@@ -10,6 +10,6 @@ public interface ContactService {
 	public List<Contact> getContacts();
 	public Contact getContactById(Integer contactId);
 	public String updateContact(Contact contact);
-	public String deleteContactById(Contact contact);
+	public String deleteContactById(Integer contactId);
 
 }

@@ -1,10 +1,13 @@
 package in.learning.binding;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
 import lombok.Data;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 @Data
 @Entity
@@ -17,6 +20,7 @@ public class Contact {
 	private String contactName;
     private String contactEmail;
     private Long contactNum;
+    private String activeSw;
 	public Integer getContactId() {
 		return contactId;
 	}
@@ -40,6 +44,12 @@ public class Contact {
 	}
 	public void setContactNum(Long contactNum) {
 		this.contactNum = contactNum;
+	}
+	public String getActiveSw() {
+		return activeSw;
+	}
+	public void setActiveSw(String activeSw) {
+		this.activeSw = activeSw;
 	}
     
 }
