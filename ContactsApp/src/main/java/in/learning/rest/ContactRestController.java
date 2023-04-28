@@ -13,16 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import in.learning.binding.Contact;
 import in.learning.service.ContactService;
-
+import org.slf4j.*;
 @RestController
 public class ContactRestController {
 	
 	@Autowired
 	ContactService service;
 	
+	private static final Logger logger = LoggerFactory.getLogger(ContactRestController.class);
+	
 	@PostMapping("/contact")
 	public String createContact(@RequestBody Contact contact) {
+		logger.debug("Post started...");
 		String status = service.saveContact(contact);
+		logger.debug("Post completed....");
 		return status;
 	}
 	
